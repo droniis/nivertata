@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feliz aniversário, amor!</title>
+
+<style>
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1db954, #121212);
+    color: #fff;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+  }
+
+  header, .page {
+    text-align: center;
+    padding: 100px 20px;
+  }
+
+  h1, h2 {
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 1.2em;
+    color: #f1f1f1;
+    margin-top: 5px;
+  }
+
+  .start-btn, .next-btn, .back-btn {
+    background-color: #1db954;
+    color: white;
+    border: none;
+    padding: 15px 35px;
+    font-size: 1.1em;
+    border-radius: 50px;
+    cursor: pointer;
+    margin: 20px 10px 0 10px;
+    transition: 0.3s;
+  }
+
+  .start-btn:hover, .next-btn:hover, .back-btn:hover {
+    background-color: #17a64a;
+    transform: scale(1.05);
+  }
+
+  .page {
+    display: none;
+  }
+
+  .photos img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 20px;
+    margin: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    transition: 0.3s;
+  }
+
+  .photos img:hover {
+    transform: scale(1.05);
+  }
+
+  .love-message {
+    font-size: 1.2rem;
+    color: #f5f5f5;
+    text-align: center;
+    margin-top: 20px;
+    font-style: italic;
+    line-height: 1.6;
+  }
+
+  footer {
+    text-align: center;
+    padding: 50px 0;
+    background-color: #101010;
+  }
+
+  .single-photo {
+    max-width: 400px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    margin-top: 30px;
+  }
+
+  .btn-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+</style>
+</head>
+<body>
+
+<!-- TELA INICIAL -->
+<header id="intro">
+  <h1>Feliz aniversário, amor! 🎉</h1>
+  <p>Que esse seja o primeiro de muitos aniversários seus que eu estarei ao seu lado 💕</p>
+  <button class="start-btn" onclick="showPage('page1')">Iniciar 🎁</button>
+</header>
+
+<!-- PÁGINA INTERMEDIÁRIA: Foto só dela -->
+<section class="page" id="page1">
+  <h2>💖 Eu amo o jeitinho dela</h2>
+  <img src="foto6.jpg" alt="Tata" class="single-photo">
+  <p class="love-message">Seu sorriso, seu jeito, tudo em você me encanta todos os dias 💕</p>
+  
+  <div class="btn-container">
+    <button class="back-btn" onclick="showPage('intro')">Voltar ⬅️</button>
+    <button class="next-btn" onclick="showPage('page2')">Continuar ➡️</button>
+  </div>
+</section>
+
+<!-- PÁGINA FINAL: Fotos do casal e música -->
+<section class="page" id="page2">
+  <h2>Nós dois 💚</h2>
+  <div class="photos">
+    <img src="foto1.jpg" alt="Foto 1 do casal">
+    <img src="foto2.jpg" alt="Foto 2 do casal">
+    <img src="foto3.jpg" alt="Foto 3 do casal">
+  </div>
+  <p class="love-message">
+    Desde o começo do nosso namoro, eu já ansiava por nossos momentos e aventuras juntos, e essas fotos são só algumas de muitas que temos e teremos no futuro, aproveita seu dia meu amor. 💞
+  </p>
+
+  <div style="margin-top: 40px;">
+    <h3>Nossa música 🎶</h3>
+    <iframe style="border-radius:12px" 
+      src="https://open.spotify.com/embed/track/5yEais1zgeW1MjLrx7tsie?utm_source=generator" 
+      width="300" height="80" frameborder="0" 
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+      loading="lazy">
+    </iframe>
+  </div>
+
+  <div class="btn-container">
+    <button class="back-btn" onclick="showPage('page1')">Voltar ⬅️</button>
+  </div>
+</section>
+
+<footer>
+  <p>Com amor: seu dedézinho</p>
+</footer>
+
+<script>
+  function showPage(pageId) {
+    // Esconde todas as páginas
+    document.getElementById('intro').style.display = 'none';
+    document.getElementById('page1').style.display = 'none';
+    document.getElementById('page2').style.display = 'none';
+    
+    // Mostra a página desejada
+    document.getElementById(pageId).style.display = 'block';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+
+</body>
+</html>
+
